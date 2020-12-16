@@ -25,12 +25,19 @@ android {
         unitTests.returnDefaultValues = true
     }
 
+    //small app size, but not working apps.
+    /*packagingOptions {
+        exclude "lib/arm64-v8a/**"
+        exclude "lib/armeabi-v7a/**"
+    }*/
+
+
     defaultConfig {
         applicationId "com.mathewsachin.fategrandautomata"
         minSdkVersion 24
         targetSdkVersion 29
         versionCode Integer.valueOf(System.env.FGA_VERSION_CODE ?: 1)
-        versionName(System.env.FGA_VERSION_NAME ?: "0.1.0")
+        versionName "3.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
