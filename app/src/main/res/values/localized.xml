@@ -157,6 +157,9 @@
     <string name="p_battle_config_cmd_text">Skill Command TextBox</string>
     <string name="p_battle_config_cmd_text_summary">Show text-box for editing Skill commands</string>
 
+    <string name="p_wait_ap_regen_text">Wait for AP Regeneration</string>
+    <string name="p_wait_ap_regen_text_summary">Keeps FGA running even when AP runs out, and automatically restart node once enough AP has regenerated.</string>
+
     <string name="p_storage">Storage</string>
     <string name="p_folder">Change folder used for Support images, drops images, etc.</string>
 
@@ -170,7 +173,7 @@
     <string name="p_debug_mode">Debug mode</string>
     <string name="p_debug_mode_summary">Highlight the regions being matched</string>
     <string name="p_ignore_notch">Ignore Notch calculation</string>
-    <string name="p_ignore_notch_summary">Useful on Samsung phones</string>
+    <string name="p_ignore_notch_summary">Turn this ON if FGO doesn\'t leave the notch area blank</string>
     <string name="p_record_screen">Record Screen</string>
     <string name="p_record_screen_summary">A file named \'record.mp4\' will be saved to output folder.\nCopy or rename it if you want to keep it.</string>
     <string name="p_root_screenshot">Use Root for Screenshots</string>
