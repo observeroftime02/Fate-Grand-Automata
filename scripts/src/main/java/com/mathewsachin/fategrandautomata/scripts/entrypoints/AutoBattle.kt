@@ -2,7 +2,6 @@ package com.mathewsachin.fategrandautomata.scripts.entrypoints
 
 import com.mathewsachin.fategrandautomata.IStorageProvider
 import com.mathewsachin.fategrandautomata.scripts.IFgoAutomataApi
-import com.mathewsachin.fategrandautomata.scripts.ISwipeLocations
 import com.mathewsachin.fategrandautomata.scripts.enums.GameServerEnum
 import com.mathewsachin.fategrandautomata.scripts.enums.MaterialEnum
 import com.mathewsachin.fategrandautomata.scripts.models.BoostItem
@@ -17,7 +16,7 @@ import kotlin.time.seconds
  * Checks if Support Selection menu is up
  */
 fun IFgoAutomataApi.isInSupport(): Boolean {
-    return Game.supportScreenRegion.exists(images.supportScreen, Similarity = 0.85)
+    return game.supportScreenRegion.exists(images.supportScreen, Similarity = 0.85)
 }
 
 /**
@@ -26,10 +25,9 @@ fun IFgoAutomataApi.isInSupport(): Boolean {
 open class AutoBattle @Inject constructor(
     exitManager: ExitManager,
     fgAutomataApi: IFgoAutomataApi,
-    val storageProvider: IStorageProvider,
-    swipeLocations: ISwipeLocations
+    val storageProvider: IStorageProvider
 ) : EntryPoint(exitManager), IFgoAutomataApi by fgAutomataApi {
-    private val support = Support(fgAutomataApi, swipeLocations)
+    private val support = Support(fgAutomataApi)
     private val card = Card(fgAutomataApi)
     private val battle = Battle(fgAutomataApi)
     private val autoSkill = AutoSkill(fgAutomataApi)
@@ -334,11 +332,11 @@ open class AutoBattle @Inject constructor(
     }
 
     private fun isFriendRequestScreen() =
-        images.supportExtra in Game.resultFriendRequestRegion
+        images.supportExtra in game.resultFriendRequestRegion
 
     private fun skipFriendRequestScreen() {
         // Friend request dialogue. Appears when non-friend support was selected this battle. Ofc it's defaulted not sending request.
-        Game.resultFriendRequestRejectClick.click()
+        game.resultFriendRequestRejectClick.click()
     }
 
     /**
@@ -520,7 +518,7 @@ open class AutoBattle @Inject constructor(
     private fun startQuest() {
         selectParty()
 
-        Game.menuStartQuestClick.click()
+        game.menuStartQuestClick.click()
 
         2.seconds.wait()
 
@@ -530,11 +528,11 @@ open class AutoBattle @Inject constructor(
     private fun useBoostItem() {
         val boostItem = BoostItem.of(prefs.boostItemSelectionMode)
         if (boostItem is BoostItem.Enabled) {
-            boostItem.clickLocation.click()
+            game.locate(boostItem).click()
 
             // in case you run out of items
             if (boostItem !is BoostItem.Enabled.Skip) {
-                BoostItem.Enabled.Skip.clickLocation.click()
+                game.locate(BoostItem.Enabled.Skip).click()
             }
         }
     }
