@@ -8,6 +8,8 @@ import com.mathewsachin.fategrandautomata.scripts.models.BoostItem
 import com.mathewsachin.fategrandautomata.scripts.modules.*
 import com.mathewsachin.fategrandautomata.scripts.prefs.IPreferences
 import com.mathewsachin.libautomata.*
+import timber.log.Timber
+import timber.log.debug
 import javax.inject.Inject
 import kotlin.math.absoluteValue
 import kotlin.time.seconds
@@ -152,7 +154,7 @@ open class AutoBattle @Inject constructor(
     /**
      *  Checks if in menu.png is on the screen, indicating that a quest can be chosen.
      */
-    private fun isInMenu() = images.menu in Game.menuScreenRegion
+    private fun isInMenu() = images.menu in game.menuScreenRegion
 
     /**
      * Resets the battle state, clicks on the quest and refills the AP if needed.
@@ -166,7 +168,7 @@ open class AutoBattle @Inject constructor(
         showRefillsAndRunsMessage()
 
         // Click uppermost quest
-        Game.menuSelectQuestClick.click()
+        game.menuSelectQuestClick.click()
 
         afterSelectingQuest()
     }
@@ -184,17 +186,17 @@ open class AutoBattle @Inject constructor(
      */
     private fun isInResult(): Boolean {
         val cases = sequenceOf(
-            images.result to Game.resultScreenRegion,
-            images.bond to Game.resultBondRegion,
-            images.masterLvlUp to Game.resultMasterLvlUpRegion,
-            images.masterExp to Game.resultMasterExpRegion
+            images.result to game.resultScreenRegion,
+            images.bond to game.resultBondRegion,
+            images.masterLvlUp to game.resultMasterLvlUpRegion,
+            images.masterExp to game.resultMasterExpRegion
         )
 
         return cases.any { (image, region) -> image in region }
     }
 
     private fun isBond10CEReward() =
-        Game.resultCeRewardRegion.exists(images.bond10Reward, Similarity = 0.75)
+        game.resultCeRewardRegion.exists(images.bond10Reward, Similarity = 0.75)
 
     /**
      * It seems like we need to click on CE (center of screen) to accept them
@@ -203,25 +205,24 @@ open class AutoBattle @Inject constructor(
         game.scriptArea.center.click()
 
     private fun isCeRewardDetails() =
-        images.ceDetails in Game.resultCeRewardDetailsRegion
+        images.ceDetails in game.resultCeRewardDetailsRegion
 
     private fun ceRewardDetails() {
         if (prefs.stopOnCEGet) {
             throw ScriptExitException(messages.ceGet)
         } else notify(messages.ceGet)
 
-        Game.resultCeRewardCloseClick.click()
+        game.resultCeRewardCloseClick.click()
     }
 
     /**
      * Clicks through the reward screens.
      */
-    private fun result() {
-        Game.resultClick.click(15)
-    }
+    private fun result() =
+        game.resultClick.click(15)
 
     private fun isInDropsScreen() =
-        images.matRewards in Game.resultMatRewardsRegion
+        images.matRewards in game.resultMatRewardsRegion
 
     private fun dropScreen() {
         checkCEDrops()
@@ -233,7 +234,7 @@ open class AutoBattle @Inject constructor(
         }
 
         // Click location changed on JP
-        Game.resultMatRewardsRegion
+        game.resultMatRewardsRegion
             .find(images.matRewards)
             ?.Region
             ?.click(5)
@@ -288,9 +289,9 @@ open class AutoBattle @Inject constructor(
             drops.add(takeColorScreenshot())
 
             // check if we need to scroll to see more drops
-            if (images.dropScrollbar in Game.resultDropScrollbarRegion) {
+            if (i == 0 && images.dropScrollbar in game.resultDropScrollbarRegion) {
                 // scroll to end
-                Location(2306, 1032).click()
+                game.resultDropScrollEndClick.click()
             } else break
         }
 
@@ -343,12 +344,12 @@ open class AutoBattle @Inject constructor(
      * Checks if FGO is on the quest reward screen for Mana Prisms, SQ, ...
      */
     private fun isInQuestRewardScreen() =
-        images.questReward in Game.resultQuestRewardRegion
+        images.questReward in game.resultQuestRewardRegion
 
     /**
      * Handles the quest rewards screen.
      */
-    private fun questReward() = Game.resultNextClick.click()
+    private fun questReward() = game.resultClick.click()
 
     // Selections Support option
     private fun support() {
@@ -421,16 +422,16 @@ open class AutoBattle @Inject constructor(
      * Clicks on the Close button for the special GudaGuda Final Honnouji reward window if it was
      * detected.
      */
-    private fun gudaFinalReward() = Game.gudaFinalRewardsRegion.click()
+    private fun gudaFinalReward() = game.gudaFinalRewardsRegion.click()
 
     /**
      * Checks if the SKIP button exists on the screen.
      */
     private fun needsToStorySkip() =
-        prefs.storySkip && Game.menuStorySkipRegion.exists(images.storySkip, Similarity = 0.7)
+        prefs.storySkip && game.menuStorySkipRegion.exists(images.storySkip, Similarity = 0.7)
 
     private fun skipStory() {
-        Game.menuStorySkipClick.click()
+        game.menuStorySkipClick.click()
         0.5.seconds.wait()
         game.menuStorySkipYesClick.click()
     }
@@ -442,6 +443,7 @@ open class AutoBattle @Inject constructor(
     private fun refillStamina() {
         val refillPrefs = prefs.refill
         val waitAPRegenPrefs = prefs.waitAPRegen
+        val waitAPRegenMinutePrefs = prefs.waitAPRegenMinutes
 
         if (refillPrefs.enabled
             && stonesUsed < refillPrefs.repetitions
@@ -458,8 +460,11 @@ open class AutoBattle @Inject constructor(
 
             3.seconds.wait()
         } else if (waitAPRegenPrefs) {
-            Location(1300, 1240).click();
-            20.seconds.wait()
+            Location(1300, 1240).click()
+            for (i in waitAPRegenMinutePrefs downTo 1) {
+                toast(messages.waitAPToast(i))
+                60.seconds.wait()
+            }
         } else throw ScriptExitException(messages.apRanOut)
     }
 
@@ -485,6 +490,8 @@ open class AutoBattle @Inject constructor(
                         (it.value.X - match.Region.center.X).absoluteValue
                     }?.index
                 }
+
+            Timber.debug { "Current Party: $currentParty" }
 
             /* If the currently selected party cannot be detected, we need to switch to a party
                which was not configured. The reason is that the "Start Quest" button becomes
