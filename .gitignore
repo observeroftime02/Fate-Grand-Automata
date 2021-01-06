@@ -13,3 +13,6 @@
 /captures
 .externalNativeBuild
 .cxx
+cleanup.bat
+/app/debug/*
+/app/release/*
