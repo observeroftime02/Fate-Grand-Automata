@@ -15,9 +15,12 @@ It's not made to do the story for you, but to automate the mundane farming.
 ## Why make another?
 I became frustrated that updates in the main branch sometimes took a long time before making it into a compiled release, so I thought I'd fork the repo, and make builds myself whenever changes happen on the main fork.
 These builds aren't intended to be used by other people, but if you find yourself in a similar situation to mine, then maybe the releases I publish will help you.
+
 I am not a professional developer.
+
 I never learned a language.
-I for the most part have no real idea what I am doing, so as long as the source code compiles I'm  content. 
+
+I for the most part have no real idea what I am doing, so as long as the source code compiles I'm  content. Please back up your battle settings / configs before using this.
 
 
 ## Acknowledgements
