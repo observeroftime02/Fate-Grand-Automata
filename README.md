@@ -1,6 +1,6 @@
 # Fate/Grand Automata UNOFFICIAL
 
-The real official repo is over here Fate-Grand-Automata/FGA
+The real official repo is over here [Fate-Grand-Automata][Fate-Grand-Automata]
 
 ![Logo](app/src/release/res/mipmap-xxxhdpi/ic_launcher_round.png)
 
