@@ -1,68 +1,33 @@
-# Fate/Grand Automata
-[![CI](https://github.com/MathewSachin/Fate-Grand-Automata/workflows/CI/badge.svg?branch=master&event=push)](https://github.com/MathewSachin/Fate-Grand-Automata/actions)
+# Fate/Grand Automata UNOFFICIAL
+
+The real official repo is over here Fate-Grand-Automata/FGA
 
 ![Logo](app/src/release/res/mipmap-xxxhdpi/ic_launcher_round.png)
 
 Auto-battle app for F/GO (Android 7 or later, no need for Root).  
 
-Download from our [website](https://fate-grand-automata.github.io)
 
 This is a **Kotlin** port of [FGO-Lua][FGOLua] as an Android app with UI for configuration and without a time-limit on use.  
 It doesn't tamper with the game in anyway and works by looking at the screen and tapping things just like a normal user would do.  
 It's not made to do the story for you, but to automate the mundane farming.
 
-Having Trouble? See the [Troubleshooting Guide](https://github.com/MathewSachin/Fate-Grand-Automata/wiki/Troubleshooting) first.  
-Join us on our [GamePress thread](https://community.gamepress.gg/t/automatic-farming-app-fate-grand-automata/72155) for discussions.
-
-## Video Guide by @reconman
-
-[![Watch the video guide](https://img.youtube.com/vi/je-FSHBFGys/sddefault.jpg)](https://www.youtube.com/watch?v=je-FSHBFGys)
 
 ## Why make another?
-FGO-Lua is really great, but:
-1. Uses AnkuLua, so isn't free. Free version has 30min time-limit.
-2. Learning curve for configuring the scripts is steeper.
-3. Difficult to edit the script on your phone. You can do it using Text editor apps, but it's not fun, trust me.
+I became frustrated that updates in the main branch sometimes took a long time before making it into a compiled release, so I thought I'd fork the repo, and make builds myself whenever changes happen on the main fork.
+These builds aren't intended to be used by other people, but if you find yourself in a similar situation to mine, then maybe the releases I publish will help you.
+I am not a professional developer.
+I never learned a language.
+I for the most part have no real idea what I am doing, so as long as the source code compiles I'm  content. 
 
-Making the app was a great learning experience and something different from your usual Android projects.
-
-## How does it work?
-This is a native Android app written in Kotlin.
-We use [OpenCV](https://opencv.org/) for image recognition,
-[Media Projection](https://developer.android.com/reference/android/media/projection/MediaProjection) for taking screenshots
-and [Accessibility Service](https://developer.android.com/guide/topics/ui/accessibility) for clicking/swiping.
-
-## How to Use?
-1. Install from the Play Store link given above and launch the app.
-2. Click on `Toggle Service` and give all the permissions it asks for.
-3. Now, you can see a button with play icon on it floating on screen.
-4. Open F/GO and Go to the node you want to farm.
-5. Press Play to start. The same button can be pressed to stop later.
-
-## How to configure?
-For how the settings work, see the original [FGO-Lua][FGOLua] project.
-
-Though there are many more features added in this project, we didn't get time to make proper documentation yet.
-
-## How to make/use images of Servant/CE/Friend?
-
-See the wiki page for [Support Image Maker](https://github.com/MathewSachin/Fate-Grand-Automata/wiki/Support-Image-Maker).
-
-## What about other scripts like Lottery and Friend Gacha?
-There is an option in Settings called `Script Mode`.
-It defaults to `Battle`.
-Set it to the script you require.
 
 ## Acknowledgements
+- [Fate-Grand-Automata][Fate-Grand-Automata] developers for letting me fork their repo and mess around with it.
 - [FGO-Lua][FGOLua] developers are the real deal. Without them this app won't exist.
 - We're using OpenCV Android package from: https://github.com/iamareebjamal/opencv-android
 - The icons are from https://materialdesignicons.com/
 - Drag-sort logic on Card Priority screen is thanks to https://medium.com/@ipaulpro/drag-and-swipe-with-recyclerview-6a6f0c422efd
 
 [FGOLua]: https://github.com/29988122/Fate-Grand-Order_Lua
+[Fate-Grand-Automata]: https://github.com/Fate-Grand-Automata/FGA
 
-## Like the project? Want to support me?
-~~Just pray that I can roll [Skadi](https://gamepress.gg/grandorder/servant/scathachskadi)!~~ `SUCCESS!`  
-Oh, and code/doc contributions are surely welcome!
 
-For donations, see the [wiki](https://github.com/MathewSachin/Fate-Grand-Automata/wiki/Donations).
