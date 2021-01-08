@@ -2,6 +2,9 @@
 <resources>
     <string name="service_runner_description">This service actually runs the scripts. An accessibility service is required if clicks and swipes are to be performed without root.</string>
 
+
+    <string name="button_does_nothing" translatable="false">Does Nothing Yet</string>
+    <string name="build_for" translatable="false">Build for Shizuki</string>
     <string name="battle_config_item_copy">Copy</string>
     <string name="battle_config_item_delete">Delete</string>
     <string name="battle_config_item_export">Export</string>

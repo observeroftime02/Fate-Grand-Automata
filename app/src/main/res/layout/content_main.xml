@@ -14,11 +14,27 @@
         android:layout_height="match_parent"
         tools:showIn="@layout/activity_main">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:name="com.mathewsachin.fategrandautomata.ui.prefs.MainSettingsFragment"
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/build_for"
+            android:textColor="#770000"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/service_toggle_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_pref"
+            app:layout_constraintVertical_bias="0.8" />
+
+        <fragment
             android:id="@+id/main_pref"
+            android:name="com.mathewsachin.fategrandautomata.ui.prefs.MainSettingsFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:theme="@style/Theme.MaterialComponents"
@@ -34,6 +50,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+        <Button
+            android:id="@+id/does_nothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_does_nothing"
+            app:layout_constraintBottom_toTopOf="@+id/service_toggle_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
