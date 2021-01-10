@@ -138,6 +138,7 @@ class ImageLoader @Inject constructor(
             MaterialEnum.Lanugo -> R.drawable.mat_lanugo
             MaterialEnum.Gallstone -> R.drawable.mat_gallstone
             MaterialEnum.MysteriousWine -> R.drawable.mat_mysterious_wine
+            MaterialEnum.SpiricleVein -> R.drawable.mat_spiricle
         }
 
     override fun loadMaterial(material: MaterialEnum) =

@@ -29,7 +29,7 @@ enum class MaterialEnum {
     // AncientBellOfTranquility,
     // ArrowHead,
     // CrownOfRadiantSilver,
-    // DivineSpiricleVein,
+    SpiricleVein,
     Claw,
     Heart,
     DragonScale,
@@ -42,6 +42,7 @@ enum class MaterialEnum {
     Lanugo,
     Gallstone,
     MysteriousWine,
+
     // DawnLightReactorCore,
     // TsukmoMirror,
     // GenesisEgg,
