@@ -13,6 +13,7 @@
     <string name="battle_config_item_clear_preferred">초기화</string>
     <string name="battle_config_item_open_maker">메이커</string>
     <string name="battle_config_support_any">아무거나</string>
+    <string name="mat_comet_shard">Comet Shard</string>
 
     <string name="support_imgs_extracted">서포트 이미지가 성공적으로 추출되었습니다</string>
     <string name="support_imgs_extract_failed">서포트 이미지 추출을 실패했습니다</string>
@@ -28,7 +29,7 @@
     <string name="battle_config_list_delete_confirm_title">삭제 확인</string>
     <string name="battle_config_list_delete_confirm_ok">삭제</string>
     <string name="battle_config_list_delete_confirm_message">%d 설정(들)을 정말로 지우시겠습니까?</string>
-
+    <string name="mat_genesis_egg">Genesis Egg</string>
     <string name="skill_maker_confirm_exit_title">나가기 확인</string>
     <string name="skill_maker_confirm_exit_message">정말로 나가시겠습니까? 오토 스킬 커맨드가 사라집니다.</string>
     <string name="skill_maker_confirm_clear_title">초기화 확인</string>

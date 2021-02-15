@@ -25,7 +25,6 @@ enum class MaterialEnum {
     EternalIce,
     GiantRing,
     AuroraSteel,
-
     // AncientBellOfTranquility,
     // ArrowHead,
     // CrownOfRadiantSilver,
@@ -42,10 +41,9 @@ enum class MaterialEnum {
     Lanugo,
     Gallstone,
     MysteriousWine,
-
     // DawnLightReactorCore,
     // TsukmoMirror,
-    // GenesisEgg,
-    // CometShard,
+    GenesisEgg,
+    CometShard,
     // FruitOfLongevity
 }

@@ -13,10 +13,11 @@
     <string name="battle_config_item_clear_preferred">清除选择</string>
     <string name="battle_config_item_open_maker">生成器</string>
     <string name="battle_config_support_any">任何</string>
-
+    <string name="mat_genesis_egg">Genesis Egg</string>
     <string name="support_imgs_extracted">助战图片提取成功</string>
     <string name="support_imgs_extract_failed">无法提取助战图片</string>
     <string name="mat_spiricle">Divine Spiricle Vein</string>
+    <string name="mat_comet_shard">Comet Shard</string>
 
     <string name="battle_config_list_no_items">目前没有脚本，请按右下角的加号新增</string>
     <string name="battle_config_list_import">导入脚本</string>

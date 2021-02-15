@@ -17,3 +17,5 @@
 cleanup.bat
 /app/debug/*
 /app/release/*
+*.apk
+app/ci/app-ci.apk

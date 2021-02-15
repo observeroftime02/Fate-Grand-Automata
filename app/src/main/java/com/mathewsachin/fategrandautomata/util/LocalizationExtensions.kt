@@ -94,4 +94,6 @@ val MaterialEnum.stringRes
         MaterialEnum.EternalIce -> R.string.mat_eternal_ice
         MaterialEnum.AuroraSteel -> R.string.mat_steel
         MaterialEnum.SpiricleVein -> R.string.mat_spiricle
+        MaterialEnum.GenesisEgg -> R.string.mat_genesis_egg
+        MaterialEnum.CometShard -> R.string.mat_comet_shard
     }

@@ -338,6 +338,8 @@
     <string name="mat_eternal_ice">Eternal Ice</string>
     <string name="mat_steel">Aurora Steel</string>
     <string name="mat_spiricle">Divine Spiricle Vein</string>
+    <string name="mat_genesis_egg">Genesis Egg</string>
+    <string name="mat_comet_shard">Comet Shard</string>
 
     <string name="p_shuffle_cards">Shuffle cards</string>
     <string name="p_shuffle_cards_wave">Wave</string>
