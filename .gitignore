@@ -1,4 +1,5 @@
 *.iml
+.github/workflows/ci.yml
 .gradle
 /local.properties
 /.idea/caches
