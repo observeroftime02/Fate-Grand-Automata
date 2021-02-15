@@ -108,6 +108,8 @@
     <string name="p_run_limit">Run limit</string>
     <string name="p_limit_no_of_runs">Limit number of runs</string>
     <string name="p_runs">Runs</string>
+    <string name="p_roll_limit">Limit number of rolls</string>
+    <string name="p_prevent_lottery_box_reset">Prevent box reset</string>
 
     <string name="p_battle_config_name">Name</string>
     <string name="p_battle_config_cmd">Command</string>
@@ -117,7 +119,7 @@
     <string name="p_battle_config_card_priority">Card Priority</string>
     <string name="p_battle_config_support">Support</string>
     <string name="p_battle_config_support_selection_mode">Selection Mode</string>
-    <string name="p_battle_config_support_fallback_selection_mode">Fallback Selection Mode</string>
+    <string name="p_battle_config_support_fallback_selection_mode">Fallback</string>
     <string name="p_battle_config_support_pref_servants">Preferred Servants</string>
     <string name="p_battle_config_support_max_ascended">Max-ascended</string>
     <string name="p_battle_config_support_pref_ces">Preferred CEs</string>
@@ -126,9 +128,7 @@
     <string name="p_battle_config_support_friends_only">Friends Only</string>
     <string name="p_battle_config_support_friend_name_hint">Friend name images can be added using \'Support Image Maker\' script</string>
 
-    <string name="p_max_skill_1">Max Skill 1</string>
-    <string name="p_max_skill_2">Max Skill 2</string>
-    <string name="p_max_skill_3">Max Skill 3</string>
+    <string name="p_max_skills">Max Skills</string>
 
     <string name="p_game_server">Game Server</string>
     <string name="p_game_server_auto_detect">Auto-detect</string>
@@ -183,22 +183,22 @@
     <string name="p_fine_tune_support_swipes_per_update">Swipes per Update</string>
     <string name="p_fine_tune_support_max_updates">Max Updates</string>
     <string name="p_fine_tune_similarity">Similarity</string>
-    <string name="p_fine_tune_min_similarity">Min Similarity (%)</string>
-    <string name="p_fine_tune_mlb_similarity">MLB Similarity (%)</string>
-    <string name="p_fine_tune_stage_counter_similarity">Stage Counter Similarity (%)</string>
+    <string name="p_fine_tune_min_similarity">Min Similarity</string>
+    <string name="p_fine_tune_mlb_similarity">MLB Similarity</string>
+    <string name="p_fine_tune_stage_counter_similarity">Stage Counter Similarity</string>
     <string name="p_fine_tune_clicks">Clicks</string>
-    <string name="p_fine_tune_wait_after_clicking">Wait after clicking (ms)</string>
-    <string name="p_fine_tune_click_duration">Click duration (ms)</string>
-    <string name="p_fine_tune_click_delay">Multi-Click Interval (ms)</string>
+    <string name="p_fine_tune_wait_after_clicking">Wait after clicking</string>
+    <string name="p_fine_tune_click_duration">Click duration</string>
+    <string name="p_fine_tune_click_delay">Multi-Click Interval</string>
     <string name="p_fine_tune_swipes">Swipes</string>
-    <string name="p_fine_tune_wait_after_swiping">Wait after swiping (ms)</string>
-    <string name="p_fine_tune_swipe_duration">Swipe duration (ms)</string>
-    <string name="p_fine_tune_swipe_multiplier">Swipe Multiplier (%)</string>
+    <string name="p_fine_tune_wait_after_swiping">Wait after swiping</string>
+    <string name="p_fine_tune_swipe_duration">Swipe duration</string>
+    <string name="p_fine_tune_swipe_multiplier">Swipe Multiplier</string>
     <string name="p_fine_tune_wait">Wait</string>
-    <string name="p_fine_tune_skill_delay">Skill Delay (ms)</string>
-    <string name="p_fine_tune_wait_before_turn">Wait before Turn (ms)</string>
-    <string name="p_fine_tune_wait_before_cards">Wait before Cards (ms)</string>
-    <string name="p_fine_tune_wait_multiplier">Wait Multiplier (%)</string>
+    <string name="p_fine_tune_skill_delay">Skill Delay</string>
+    <string name="p_fine_tune_wait_before_turn">Wait before Turn</string>
+    <string name="p_fine_tune_wait_before_cards">Wait before Cards</string>
+    <string name="p_fine_tune_wait_multiplier">Wait Multiplier</string>
 
     <string name="p_nav_refill">Refill</string>
     <string name="p_nav_more_options">More options</string>
@@ -272,6 +272,7 @@
     <string name="screen_turned_off">Script paused due to screen turning off</string>
     <string name="unexpected_error">Unexpected Error</string>
     <string name="script_exited">Script Exited</string>
+    <string name="lottery_reset_disabled">Lottery box reset is disabled</string>
     <string name="inventory_full">Inventory Full</string>
     <string name="present_box_full">Present Box Full</string>
     <string name="support_img_maker_not_found">No support images were found on the current screen. Are you on Support selection or Friend list screen?</string>
@@ -297,6 +298,8 @@
     <string name="mats_farmed">Farmed %d material(s)</string>
     <string name="p_mat_limit">Limit by Materials</string>
     <string name="p_mat_limit_count">Count</string>
+
+    <string name="times_rolled">Rolled %d time(s)</string>
 
     <string name="mat_proof">Proof of Hero</string>
     <string name="mat_bone">Evil Bone</string>

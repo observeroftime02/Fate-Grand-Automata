@@ -49,6 +49,10 @@ class PrefsCore @Inject constructor(
     val debugMode = maker.bool("debug_mode")
     val autoStartService = maker.bool("auto_start_service")
 
+    val shouldLimitFP = maker.bool("should_fp_limit")
+    val limitFP = maker.int("fp_limit", 1)
+    val preventLotteryBoxReset = maker.bool("prevent_lottery_reset")
+
     val supportSwipesPerUpdate = maker.int("support_swipes_per_update_x", 10)
     val supportMaxUpdates = maker.int("support_max_updates_x", 5)
 
@@ -68,8 +72,6 @@ class PrefsCore @Inject constructor(
     val swipeWaitTime = maker.int("swipe_wait_time", 700)
     val swipeDuration = maker.int("swipe_duration", 300)
     val swipeMultiplier = maker.int("swipe_multiplier", 100)
-
-    val showTextBoxForSkillCmd = maker.bool("auto_skill_cmd_text")
 
     val maxGoldEmberSetSize = maker.int("max_gold_ember_set_size", 1)
 
